@@ -1,24 +1,30 @@
 FORMAT: 1A
 HOST: http://www.google.com
 
-# regioner
-Notes API is a *short texts saving* service similar to its physical paper presence on your table.
+# regioner og kundeavis
+Hver kjede kan ha en eller flere navngitte samlinger butikker. 
+Disse kalles *regioner* og har teknisk sett ingen binding til organisatoriske eller geografiske regionsbegreper (men kan overlappe disse). 
 
-# Group Notes
-Notes related resources of the **Notes API**
 
-## Regioner [/regioner]
+## Regioner [/regions/{chainid}]
 ### list ut alle regioner [GET]
+
++ Parameters
+    + chainid (required, number, `1100`) ... `kjedeid`      
+
 + Response 200 (application/json)
 
+    
         [{
           "id": 1, 
           "title": "Oslofjord",
-          "stores": [10,11,12,13,14,15,16,17,18,19]
+          "magazine" : "http://viewer.zmags.com/publication/68d27aa3#/68d27aa3/1"
+          "stores": [10,11,12,13,14,15,16,17,18,19],
         }, {
           "id": 2, 
           "title": "Øst",
-          "stores": [20,21,22,23,24,25,26,27,28,29]
+          "magazine" : "http://viewer.zmags.com/publication/68d27aa3#/68d27aa3/1"
+          "stores": [20,21,22,23,24,25,26,27,28,29],
         }]
 
 ### Opprett en ny region [POST]
@@ -28,13 +34,15 @@ Notes related resources of the **Notes API**
 
 + Response 201 (application/json)
 
-        { "id": 3, "title": "Nord", "stores" : [] }
+        { "id": 3, "title": "Nord", "magazine" : "", "stores" : [] }
 
-## Region [/regioner/{id}]
+## Region [/regions/{chainid}/?regionid={id}]
 Enkel region med alle egenskaper
 
 + Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Note to perform action with. Has example value.
+    + chainid (required, number, `1100`) ... `kjedeid`      
+    + regionid (required, number, `1`) ... `id` til aktuell region
+    
 
 ### Hent en region [GET]
 + Response 200 (application/json)
@@ -45,7 +53,14 @@ Enkel region med alle egenskaper
 
     + Body
     
-            { "id": 2, "title": "Øst", "stores": [20,21,22,23,24,25,26,27,28,29]}
+            { "id": 2, "title": "Øst", "magazine" : "http://viewer.zmags.com/publication/68d27aa3#/68d27aa3/1", "stores": [20,21,22,23,24,25,26,27,28,29], }
 
-### Remove a Note [DELETE]
+### Slett en region [DELETE]
 + Response 204
+
+## Kundeavis [/magazine/{chainid}/]
++ Response 200 (application/json)
+{ "url": "http://viewer.zmags.com/publication/68d27aa3#/68d27aa3/1" }
+
+
+##
