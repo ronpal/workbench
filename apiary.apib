@@ -18,13 +18,33 @@ Disse kalles *regioner* og har teknisk sett ingen binding til organisatoriske el
         [{
           "id": 1, 
           "title": "Oslofjord",
-          "magazines" : "http://viewer.zmags.com/publication/68d27aa3#/68d27aa3/1"
-          "stores": [{"store":{"Id":"7080001315467","name":"Kiwi 069 Koppang"}},{"store":{"Id":"7080003309907","name":"Kiwi 735 Spangereid"}},{"store":{"Id":"7080003528988","name":"Kiwi 737 Mandal"}}]
+          "magazines" : 
+            [
+                "magazine" : {
+                    "id" : 123
+                    "resource" : "http://viewer.zmags.com/publication/68d27aa3#/68d27aa3/1",
+                    "from" : date,
+                    "to" : date
+                },
+                "magazine" : {
+                    "id" : 123
+                    "resource" : "http://viewer.zmags.com/publication/68d27aa3#/68d27aa3/1",
+                    "from" : date,
+                    "to" : date
+                }
+            ],
+          "stores": [
+            {
+                "store": { 
+                    "Id":"7080001315467",
+                    "name":"Kiwi 069 Koppang"}
+                    },
+                {"store":{"Id":"7080003309907","name":"Kiwi 735 Spangereid"}},{"store":{"Id":"7080003528988","name":"Kiwi 737 Mandal"}}]
         }, {
           "id": 2, 
           "title": "Øst",
           "magazines" : "http://viewer.zmags.com/publication/68d27aa3#/68d27aa3/1"
-          "stores": [,{"store":{"Id":"7080000960682","name":"Kiwi 711 Vanse"}},{"store":{"Id":"7080000356812","name":"Kiwi 766 Farsund"}},{"store":{"Id":"7080001125523","name":"Kiwi 796 Vigeland"}},{"store":{"Id":"7080001201432","name":"Kiwi 731 Lyngdal"}},{"store":{"Id":"7080000960590","name":"Kiwi 702 Langenes"}},{"store":{"Id":"7080001227074","name":"Kiwi 734 Flekkerøy"}},{"store":{"Id":"7080000960699","name":"Kiwi 712 Tangvall"}},{"store":{"Id":"7080001255107","name":"Kiwi 738 Alleen Senter"}},{"store":{"Id":"7080001208158","name":"Kiwi 797 Ytre Vågsbygd"}},{"store":{"Id":"7080000876426","name":"Kiwi 701 Vågsbygd Senter"}}],],
+          "stores": [{"store":{"Id":"7080000960682","name":"Kiwi 711 Vanse"}},{"store":{"Id":"7080000356812","name":"Kiwi 766 Farsund"}},{"store":{"Id":"7080001125523","name":"Kiwi 796 Vigeland"}},{"store":{"Id":"7080001201432","name":"Kiwi 731 Lyngdal"}},{"store":{"Id":"7080000960590","name":"Kiwi 702 Langenes"}},{"store":{"Id":"7080001227074","name":"Kiwi 734 Flekkerøy"}},{"store":{"Id":"7080000960699","name":"Kiwi 712 Tangvall"}},{"store":{"Id":"7080001255107","name":"Kiwi 738 Alleen Senter"}},{"store":{"Id":"7080001208158","name":"Kiwi 797 Ytre Vågsbygd"}},{"store":{"Id":"7080000876426","name":"Kiwi 701 Vågsbygd Senter"}}],],
         }]
 
 ### Opprett en ny region [POST]
